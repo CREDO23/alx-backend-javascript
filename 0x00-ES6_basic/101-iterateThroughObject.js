@@ -1,4 +1,4 @@
-/* eslint-disable radix */
+/* eslint-disable */
 export default function iterateThroughObject(reportWithIterator) {
     let output = '';
   
