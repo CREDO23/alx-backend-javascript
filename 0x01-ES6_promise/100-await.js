@@ -1,18 +1,16 @@
 /* eslint-disable */
 import { uploadPhoto, createUser } from './utils.js';
 
-async function asyncUploadUser() {
-  const photo = await uploadPhoto();
-  const user = await createUser();
-
-  if (photo && user) {
-    return { photo, user };
-  } else {
+export default async function asyncUploadUser() {
+  try {
+    return {
+      photo: await uploadPhoto(),
+      user: await createUser(),
+    };
+  } catch (err) {
     return {
       photo: null,
       user: null,
     };
   }
 }
-
-export default asyncUploadUser;
